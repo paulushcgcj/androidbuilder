@@ -28,7 +28,6 @@ ENV PATH="${PATH}:${HOME}/bin:${GRADLE_HOME}/bin"
 
 #Download and prepare all the android SDK stuff
 RUN wget --quiet --output-document=/gradle/gradle.zip https://services.gradle.org/distributions/gradle-4.3.1-bin.zip
-#ADD gradle.zip /gradle/
 RUN unzip /gradle/gradle.zip -d /gradle/
 RUN rm -f /gradle/gradle.zip
 
@@ -38,7 +37,6 @@ RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
 
 #Download and prepare all the android SDK stuff
 RUN wget --quiet --output-document=${ANDROID_HOME}/android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
-#ADD android-sdk.zip ${ANDROID_HOME}/
 RUN unzip ${ANDROID_HOME}/android-sdk.zip -d ${ANDROID_HOME}/
 RUN mkdir -p /root/.android/
 RUN touch /root/.android/repositories.cfg
