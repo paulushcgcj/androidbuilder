@@ -45,11 +45,11 @@ RUN touch /root/.android/repositories.cfg
 
 #Install dependencies
 RUN yes | sdkmanager --licenses
-RUN echo y | sdkmanager "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}"
-RUN echo y | sdkmanager "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS}"
-RUN echo y | sdkmanager "platform-tools" "extras;google;m2repository"
-RUN echo y | sdkmanager "platform-tools" "extras;google;google_play_services"
-RUN echo y | sdkmanager "platform-tools" "extras;android;m2repository"  
+RUN yes | sdkmanager "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}"
+RUN yes | sdkmanager "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS}"
+RUN yes | sdkmanager "platform-tools" "extras;google;m2repository"
+RUN yes | sdkmanager "platform-tools" "extras;google;google_play_services"
+RUN yes | sdkmanager "platform-tools" "extras;android;m2repository"  
 
 #Defining Home Folder
 ENV APP_HOME /apphome
