@@ -23,11 +23,11 @@ ENV PATH="${PATH}:${HOME}/bin:${ANDROID_HOME}/platform-tools/bin:${ANDROID_HOME}
 RUN mkdir -p /gradle/
 
 #Setting gradle on path
-ENV GRADLE_HOME=/gradle/gradle-4.3.1
+ENV GRADLE_HOME=/gradle/gradle-2.14.1
 ENV PATH="${PATH}:${HOME}/bin:${GRADLE_HOME}/bin"
 
 #Download and prepare all the android SDK stuff
-RUN wget --quiet --output-document=/gradle/gradle.zip https://services.gradle.org/distributions/gradle-4.3.1-bin.zip
+RUN wget --quiet --output-document=/gradle/gradle.zip https://services.gradle.org/distributions/gradle-2.14.1-all.zip
 RUN unzip /gradle/gradle.zip -d /gradle/
 RUN rm -f /gradle/gradle.zip
 
@@ -43,8 +43,6 @@ RUN touch /root/.android/repositories.cfg
 
 #Install dependencies
 RUN yes | sdkmanager --licenses
-#setting version 23 just to save some time
-RUN yes | sdkmanager "platform-tools" "platforms;android-23"
 RUN yes | sdkmanager "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}"
 RUN yes | sdkmanager "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS}"
 RUN yes | sdkmanager "platform-tools" "extras;google;m2repository"
