@@ -2,13 +2,13 @@ FROM openjdk:8-jdk
 LABEL maintainer="Paulo Gomes da Cruz Junior <paulushc@gmail.com>"
 
 #Setting Android Compile SDK Version
-ENV ANDROID_COMPILE_SDK="26"
+ENV ANDROID_COMPILE_SDK="23"
 
 #Setting Android Build Tools Version
-ENV ANDROID_BUILD_TOOLS="26.0.1"
+ENV ANDROID_BUILD_TOOLS="23.0.1"
 
 #Setting Android SDK Tools Version
-ENV ANDROID_SDK_TOOLS="26.0.1"
+ENV ANDROID_SDK_TOOLS="23.0.1"
 
 #Setting Android Home Path
 ENV ANDROID_HOME=/android-sdk-linux
@@ -43,8 +43,6 @@ RUN touch /root/.android/repositories.cfg
 
 #Install dependencies
 RUN yes | sdkmanager --licenses
-#setting version 23 just to save some time
-RUN yes | sdkmanager "platform-tools" "platforms;android-23"
 RUN yes | sdkmanager "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}"
 RUN yes | sdkmanager "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS}"
 RUN yes | sdkmanager "platform-tools" "extras;google;m2repository"
