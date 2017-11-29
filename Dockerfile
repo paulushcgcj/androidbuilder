@@ -23,11 +23,11 @@ ENV PATH="${PATH}:${HOME}/bin:${ANDROID_HOME}/platform-tools/bin:${ANDROID_HOME}
 RUN mkdir -p /gradle/
 
 #Setting gradle on path
-ENV GRADLE_HOME=/gradle/gradle-4.3.1
+ENV GRADLE_HOME=/gradle/gradle-2.14.1
 ENV PATH="${PATH}:${HOME}/bin:${GRADLE_HOME}/bin"
 
 #Download and prepare all the android SDK stuff
-RUN wget --quiet --output-document=/gradle/gradle.zip https://services.gradle.org/distributions/gradle-4.3.1-bin.zip
+RUN wget --quiet --output-document=/gradle/gradle.zip https://services.gradle.org/distributions/gradle-2.14.1-all.zip
 RUN unzip /gradle/gradle.zip -d /gradle/
 RUN rm -f /gradle/gradle.zip
 
