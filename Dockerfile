@@ -43,6 +43,8 @@ RUN touch /root/.android/repositories.cfg
 
 #Install dependencies
 RUN yes | sdkmanager --licenses
+#setting version 23 just to save some time
+RUN yes | sdkmanager "platform-tools" "platforms;android-23"
 RUN yes | sdkmanager "platform-tools" "platforms;android-${ANDROID_COMPILE_SDK}"
 RUN yes | sdkmanager "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS}"
 RUN yes | sdkmanager "platform-tools" "extras;google;m2repository"
