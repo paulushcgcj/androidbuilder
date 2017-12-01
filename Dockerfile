@@ -2,13 +2,13 @@ FROM openjdk:8-jdk
 LABEL maintainer="Paulo Gomes da Cruz Junior <paulushc@gmail.com>"
 
 #Setting Android Compile SDK Version
-ENV ANDROID_COMPILE_SDK="23"
+ENV ANDROID_COMPILE_SDK="24"
 
 #Setting Android Build Tools Version
-ENV ANDROID_BUILD_TOOLS="23.0.1"
+ENV ANDROID_BUILD_TOOLS="24.0.3"
 
 #Setting Android SDK Tools Version
-ENV ANDROID_SDK_TOOLS="23.0.1"
+ENV ANDROID_SDK_TOOLS="24.0.3"
 
 #Setting Android Home Path
 ENV ANDROID_HOME=/android-sdk-linux
